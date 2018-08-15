@@ -1,0 +1,37 @@
+.echo ON
+.headers ON
+
+--name: Aaron Person
+--file: lab2b.sql
+--August/15/2018
+
+--who are our customers in north america
+select customerid, companyname, country from customers where country in ('USA','Mexico','Canada');
+
+--what orders are placed in april 1998
+select orderid, orderdate from orders where orderdate like '1998-04-%';
+
+--what sauces do we will
+select productid, productname from products where productname like '%sauce%';
+
+--you sell some kind of dried fruit that i liked very much, what is its name?
+select productid, productname from products where productname like '%dried%';
+
+--what employees ship products to Germany in December
+select employeeID, orderdate, shipcountry from orders where orderdate like '%-12-%'and shipcountry like 'Germany';
+
+--we have an issue with product 19. i need to know the total amount and net amount of all orders for product 19 where the customer took a discount
+select orderid, productid, unitprice, quantity, (unitprice * quantity) as totalamounnt, discount from order_details where productid = 19 and discount > 0;
+
+--i need a list of employees by title, firstname, and lastname, with the employee's position under their names and a line seperating each employee
+select titleofcourtesy ||" "|| firstname || " "|| lastname || " "|| title|| " " from employees
+
+--i need a list of our customers contact alphabetically by last name 
+ select substr(contactname, instr(contactname, ' ' )+1) || ", " || substr(contactname, 1, instr(contactname, ' '))as last from customers order by last;
+
+--i need a report telling me the most common pairing of customers and employees with the greatest order of volume (by the orders placed). Exclude pairings with minimal orders
+select customerid, employeeid, count(orderid) as velocity from orders group by customerid, employeeid having velocity > 4 order by velocity desc;
+
+--i need a report listing the higest average selling point by product ID. the average is determined by the total sales of each product ID divided by the quantity of the product sold. 
+include only the highest 20 points
+select productid, ((count(productid) * unitprice)/quantity) as average from order_details group by productid order by average desc limit 20;
