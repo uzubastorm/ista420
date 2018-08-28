@@ -1,0 +1,12 @@
+1. is a named query expression that represents a valid relational table.
+2. in the FROM clause
+3. put it in parentheses
+4. in the SELECT
+5. no, unless it serves a purpose other than presentation.
+6. yes it can
+7. Yes, a view is a durable object
+8. to prevent modifications through the view that conflict with the view’s filter
+9. it binds the schema of referenced objects
+10. table expressions that support input parameters.
+11.  allows joining between two table expressions
+12. cross apply/ implements only one and outer apply implements two
