@@ -1,0 +1,21 @@
+1. Allow access to data in the records right before and after the current record
+
+2. Creates a function in the current database that maps the rows of a table
+
+3. Sort the data in ascending or descending order
+
+4. filters a frame, or a subset, of rows from the window partition between the two specified delimiters.
+
+5. rank each row with respect to others in the window. could be to order from most important
+
+6. return an element from a row that is at a certain offset from the current row or at the beginning or end of a window frame.
+
+7. Lead = used to access data from nth next row in the same result set without the use of a self-join
+   Lag = used to access data from nth previous row in the same result set without the use of a self-join
+   
+8. First value = Returns the first value in an ordered set of values
+   Last value = Returns the last value in an ordered set of values
+
+9. A function where the values of multiple rows are grouped together
+
+10. rotate the data from one column into multiple columns

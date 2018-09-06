@@ -1,0 +1,10 @@
+1. a query that is nested inside a statement
+2. does not require any input from outer query
+3. a query that requires an input from its outer query
+4. scalor -  a multiplier
+5. select customerID where customer country = like germany
+6. select customername, customerID, from            where        
+7. test for the existence of any record in a subquery
+8. Return values where they measure the value
+9. two value logic 
+10. join the tables to get both
